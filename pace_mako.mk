@@ -13,6 +13,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 768
+TARGET_BOOTANIM_WIDTH := 720
+
+## Specify phone tech before including full_phone
+$(call inherit-product, vendor/pace/config/gsm.mk)
+
+# Inherit some common stuff.
+$(call inherit-product, vendor/pace/config/common_full_phone.mk)
+
+# Enhanced NFC
+$(call inherit-product, vendor/pace/config/nfc_enhanced.mk)
+
 $(call inherit-product, device/lge/mako/full_mako.mk)
 
-PRODUCT_NAME := aosp_mako
+PRODUCT_NAME := pace_mako
+
+# PRODUCT_DEVICE PRODUCT_BRAND ...?
